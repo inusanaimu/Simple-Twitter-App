@@ -1,0 +1,8 @@
+.eachTweet {
+  border-bottom: 1px solid #dfdfdf;
+  padding: 0.5rem 1rem;
+}
+
+.eachTweet button {
+  margin: 4px;
+}
