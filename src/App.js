@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import TweetForm from './Components/TweetForm'
-import TweetList from './Components/TweetList'
+import TweetForm from './Components/Logic/TweetForm'
+import TweetList from './Components/Logic/TweetList'
 import Card from './Components/UI/Card'
 
 import './styles.css'

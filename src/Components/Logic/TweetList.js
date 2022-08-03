@@ -1,5 +1,5 @@
 import EachTweet from './EachTweet'
-import Card from './UI/Card'
+import Card from '../UI/Card'
 
 function TweetList(props) {
   const { tweets, deleteTweet, likeAction } = props
