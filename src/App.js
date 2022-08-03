@@ -1,19 +1,17 @@
 import React, { useState } from 'react'
 import TweetForm from './Components/TweetForm'
 import TweetList from './Components/TweetList'
+import Card from './Components/UI/Card'
 
 import './styles.css'
 
 function App() {
-  const [tweets, setTweets] = useState([
-    { id: 1, message: 'First', like: false },
-    { id: 2, message: 'Second', like: true },
-  ])
+  const [tweets, setTweets] = useState([])
 
   const addTweet = (tweet) => {
     setTweets([
-      ...tweets,
       { message: tweet, id: new Date().getTime().toString(), like: false },
+      ...tweets,
     ])
   }
 
@@ -24,7 +22,7 @@ function App() {
   }
   const likeAction = (item) => {
     setTweets(() => {
-      return tweets.map((tweet) => {
+      return tweets.map((tweet, index) => {
         if (tweet.id === item.id) {
           return { ...tweet, like: !tweet.like }
         }
@@ -35,13 +33,15 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>Twitter App</h1>
-      <TweetForm addTweet={addTweet} />
-      <TweetList
-        tweets={tweets}
-        deleteTweet={deleteTweet}
-        likeAction={likeAction}
-      />
+      <Card>
+        <h1>Twitter App</h1>
+        <TweetForm addTweet={addTweet} />
+        <TweetList
+          tweets={tweets}
+          deleteTweet={deleteTweet}
+          likeAction={likeAction}
+        />
+      </Card>
     </div>
   )
 }

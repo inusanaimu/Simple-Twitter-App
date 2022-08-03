@@ -14,8 +14,18 @@ const EachTweet = (props) => {
     <aside>
       <div className={classes.eachTweet}>
         <p> {tweet.message} </p>
-        <button onClick={handleLike}> {tweet.like ? 'Liked' : 'Like'} </button>
-        <button onClick={handleClick}>delete</button>
+        <button
+          onClick={handleLike}
+          style={{
+            backgroundColor: tweet.like && '#00acee',
+            border: '1px solid #708090',
+            borderRadius: '3px',
+          }}
+        >
+          {' '}
+          {tweet.like ? 'Disliked' : 'Like'}{' '}
+        </button>
+        <button onClick={handleClick}>Delete</button>
       </div>
     </aside>
   )
